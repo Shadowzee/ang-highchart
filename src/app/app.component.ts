@@ -24,7 +24,7 @@ export class AppComponent {
 
   }
   onSubmit(){
-    if(this.user.value.firstName=="this" && this.user.value.password=="this"){
+    if(this.user.value.firstName=="admin@smartclean.com" && this.user.value.password=="admin@smartclean.com"){
       this.switch=this.configservice.switchswitch();
       this.error=false;
       this.router.navigateByUrl('/charts');
