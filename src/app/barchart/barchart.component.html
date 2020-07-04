@@ -1,22 +1,23 @@
 <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
     <li [ngbNavItem]="1">
-      <a ngbNavLink>One</a>
+      <a ngbNavLink>Table</a>
       <ng-template ngbNavContent>
        <app-table></app-table>
       </ng-template>
     </li>
     <li [ngbNavItem]="2">
-      <a ngbNavLink>Line</a>
+      <a ngbNavLink>Line Chart</a>
       <ng-template ngbNavContent>
         <app-linechart></app-linechart>
       </ng-template>
     </li>
     <li [ngbNavItem]="3">
-      <a ngbNavLink>Bar</a>
+      <a ngbNavLink>Bar Chart</a>
       <ng-template ngbNavContent>
         <app-bar></app-bar>
       </ng-template>
     </li>
+    <button (click)="Logout()" >Log Out</button>
   </ul>
   
   <div [ngbNavOutlet]="nav" class="mt-2"></div>

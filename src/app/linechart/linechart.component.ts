@@ -15,13 +15,21 @@ export class LinechartComponent implements OnInit {
       type: "line"
     },
     title: {
-      text: 'Sample Scatter Plot'
+      text: 'Line Chart'
     },
     tooltip: {
       formatter: function() {
         return 'x: ' +  this.x +   '  y: ' + this.y;
       }
     },
+    plotOptions: {
+      series: {
+          label: {
+              connectorAllowed: false
+          },
+          pointStart: 0
+      }
+  },
     labels: {
       enabled:true,
       items:[{html:"dsfd"},{style: {
@@ -30,19 +38,22 @@ export class LinechartComponent implements OnInit {
     }],
         format: "erer km"
       },
-    series: [{
+    series: [{type:'line',
       name:'dom',
-      data: [1, 2, 3]
+      data: []
     },{
+      type:'line',
       name:'dow',
-      data: [4, 5, 6]
+      data: []
     },
     {
+      type:'line',
       name:'hour',
-      data: [6, 5, 6]
+      data: []
     },{
+      type:'line',
       name:'SumHourly',
-      data: [10, 5, 6]
+      data: []
     }]
   }// required
   chartCallback = function (chart) { return null; } // optional function, defaults to null

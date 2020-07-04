@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { ChartdataService } from '../chartdata.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-barchart',
   templateUrl: './barchart.component.html',
@@ -31,17 +32,17 @@ export class BarchartComponent implements OnInit {
       },
     series: [{
       name:'dom',
-      data: [1, 2, 3]
+      data: []
     },{
       name:'dow',
-      data: [4, 5, 6]
+      data: []
     },
     {
       name:'hour',
-      data: [6, 5, 6]
+      data: []
     },{
       name:'SumHourly',
-      data: [10, 5, 6]
+      data: []
     }]
   }// required
   chartCallback = function (chart) { return null; } // optional function, defaults to null
@@ -49,7 +50,8 @@ export class BarchartComponent implements OnInit {
   oneToOneFlag = true; // optional boolean, defaults to false
   runOutsideAngularFlag = false;
   chartdata: any;
-  constructor(private chartservice:ChartdataService) { }
+  switch: boolean;
+  constructor(private chartservice:ChartdataService,private router: Router) { }
 
   ngOnInit(): void {
     this.chartservice.chartdata.subscribe(data=>{
@@ -61,6 +63,11 @@ export class BarchartComponent implements OnInit {
         this.chartOptions.series[3].data.push(data.SumHourly);
       })
     })
+  }
+  Logout(){
+    this.switch=this.chartservice.switchswitchfalse();
+    this.router.navigateByUrl('/');
+
   }
 
 }

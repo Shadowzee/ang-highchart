@@ -15,16 +15,23 @@ export class AppComponent {
     firstName: new FormControl(''),
     password: new FormControl(''),
   });
+  error: boolean;
   constructor(private configservice:ChartdataService,private router: Router){}
+  ngOnInit(){
+    this.configservice.anotherswitch.subscribe(data=>{
+      this.switch=data;
+    })
+
+  }
   onSubmit(){
     if(this.user.value.firstName=="this" && this.user.value.password=="this"){
       this.switch=this.configservice.switchswitch();
+      this.error=false;
       this.router.navigateByUrl('/charts');
     }
+    else{
+      this.error=true;
+    }
   }
-  Logout(){
-    this.switch=this.configservice.switchswitchfalse();
-    this.router.navigateByUrl('/');
-
-  }
+ 
 }

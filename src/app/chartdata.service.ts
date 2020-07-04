@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ChartdataService {
 chartdata =new BehaviorSubject<any>(chartdata);
+anotherswitch=new BehaviorSubject<any>(false);
 switch=false;
   constructor() { }
   switchswitch(){
@@ -15,6 +16,7 @@ switch=false;
   }
   switchswitchfalse(){
     this.switch=false;
+    this.anotherswitch.next(false);
     return false;
   }
 }

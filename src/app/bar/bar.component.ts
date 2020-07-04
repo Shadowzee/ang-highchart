@@ -13,10 +13,10 @@ export class BarComponent implements OnInit {
   chartConstructor = 'chart'; // optional string, defaults to 'chart'
   chartOptions ={
      chart: {
-      type: "column"
+      type: "bar"
     },
     title: {
-      text: 'Sample Scatter Plot'
+      text: 'Bar Chart'
     },
     tooltip: {
       formatter: function() {
@@ -33,17 +33,17 @@ export class BarComponent implements OnInit {
       },
     series: [{
       name:'dom',
-      data: [1, 2, 3]
+      data: []
     },{
       name:'dow',
-      data: [4, 5, 6]
+      data: []
     },
     {
       name:'hour',
-      data: [6, 5, 6]
+      data: []
     },{
       name:'SumHourly',
-      data: [10, 5, 6]
+      data: []
     }]
   }// required
   chartCallback = function (chart) { return null; } // optional function, defaults to null

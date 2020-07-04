@@ -5,22 +5,30 @@
 
 
 <div *ngIf="!switch" class="container">
-
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-5">
+<h2>Login Page</h2>
+<br />
 <form [formGroup]="user" (ngSubmit)="onSubmit()">
   <p>
-    <label>First Name:</label>
+    <label>UserName:</label>
     <input type="text"  formControlName="firstName">
 </p>
 <p>
     <label>Password:</label>
     <input type="password"  formControlName="password">
 </p>
-</form>
 <button type="submit" (click)="onSubmit()" >Submit</button>
+</form>
+<span style="color:red;" *ngIf="error">Wrong username or password</span>
+</div>
+<div class="col-md-3"></div>
+</div>
 
 </div>
-<button (click)="Logout()" >Log Out</button>
-{{user.value.firstName}}
+
+
 
 
 <!-- <div [ngbNavOutlet]="nav"></div> -->
