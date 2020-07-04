@@ -1,4 +1,29 @@
-<highcharts-chart 
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+    <li [ngbNavItem]="1">
+      <a ngbNavLink>One</a>
+      <ng-template ngbNavContent>
+       <app-table></app-table>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+      <a ngbNavLink>Line</a>
+      <ng-template ngbNavContent>
+        <app-linechart></app-linechart>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="3">
+      <a ngbNavLink>Bar</a>
+      <ng-template ngbNavContent>
+        <app-bar></app-bar>
+      </ng-template>
+    </li>
+  </ul>
+  
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+  
+
+
+<!-- <highcharts-chart 
   [Highcharts]="Highcharts"
  
   [constructorType]="chartConstructor"
@@ -10,4 +35,4 @@
   [runOutsideAngular]="runOutsideAngularFlag"
  
   style="width: 100%; height: 400px; display: block;"
-></highcharts-chart>
+></highcharts-chart> -->

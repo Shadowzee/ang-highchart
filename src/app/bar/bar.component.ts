@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+
 import * as Highcharts from 'highcharts';
 import { ChartdataService } from '../chartdata.service';
+
 @Component({
-  selector: 'app-barchart',
-  templateUrl: './barchart.component.html',
-  styleUrls: ['./barchart.component.scss']
+  selector: 'app-bar',
+  templateUrl: './bar.component.html',
+  styleUrls: ['./bar.component.scss']
 })
-export class BarchartComponent implements OnInit {
+export class BarComponent implements OnInit {
   Highcharts = Highcharts; // required
   chartConstructor = 'chart'; // optional string, defaults to 'chart'
   chartOptions ={
@@ -45,8 +47,7 @@ export class BarchartComponent implements OnInit {
     }]
   }// required
   chartCallback = function (chart) { return null; } // optional function, defaults to null
-  updateFlag = false; // optional boolean
-  oneToOneFlag = true; // optional boolean, defaults to false
+
   runOutsideAngularFlag = false;
   chartdata: any;
   constructor(private chartservice:ChartdataService) { }
@@ -62,5 +63,6 @@ export class BarchartComponent implements OnInit {
       })
     })
   }
+  }
 
-}
+

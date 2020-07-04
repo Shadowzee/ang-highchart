@@ -1,0 +1,25 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">DOM</th>
+      <th scope="col">DOW</th>
+      <th scope="col">Hour</th>
+      <th scope="col">SumHourly</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let chart of chartdata; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>
+      
+        {{ chart.insid }}
+      </td>
+      <td>{{ chart.dom}}</td>
+      <td>{{ chart.dow}}</td>
+      <td>{{ chart.hour}}</td>
+      <td>{{ chart.SumHourly}}</td>
+    </tr>
+    </tbody>
+  </table>

@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import * as Highcharts from 'highcharts';
 import { ChartdataService } from '../chartdata.service';
+import * as Highcharts from 'highcharts';
+
 @Component({
-  selector: 'app-barchart',
-  templateUrl: './barchart.component.html',
-  styleUrls: ['./barchart.component.scss']
+  selector: 'app-linechart',
+  templateUrl: './linechart.component.html',
+  styleUrls: ['./linechart.component.scss']
 })
-export class BarchartComponent implements OnInit {
+export class LinechartComponent implements OnInit {
   Highcharts = Highcharts; // required
   chartConstructor = 'chart'; // optional string, defaults to 'chart'
   chartOptions ={
      chart: {
-      type: "column"
+      type: "line"
     },
     title: {
       text: 'Sample Scatter Plot'
@@ -45,8 +46,8 @@ export class BarchartComponent implements OnInit {
     }]
   }// required
   chartCallback = function (chart) { return null; } // optional function, defaults to null
-  updateFlag = false; // optional boolean
-  oneToOneFlag = true; // optional boolean, defaults to false
+ // optional boolean
+// optional boolean, defaults to false
   runOutsideAngularFlag = false;
   chartdata: any;
   constructor(private chartservice:ChartdataService) { }

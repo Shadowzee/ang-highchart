@@ -7,5 +7,14 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ChartdataService {
 chartdata =new BehaviorSubject<any>(chartdata);
+switch=false;
   constructor() { }
+  switchswitch(){
+    this.switch=true;
+    return true;
+  }
+  switchswitchfalse(){
+    this.switch=false;
+    return false;
+  }
 }

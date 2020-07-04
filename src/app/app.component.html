@@ -1,12 +1,30 @@
-<ul ngbNav #nav="ngbNav" class="nav-tabs">
-  <li ngbNavItem>
-    <a ngbNavLink>First</a>
-    <ng-template ngbNavContent>First content</ng-template>
-  </li>
-  <li ngbNavItem>
-    <a ngbNavLink>Second</a>
-    <ng-template ngbNavContent>Second content</ng-template>
-  </li>
-</ul>
-<div [ngbNavOutlet]="nav"></div>
-<app-barchart></app-barchart>
+
+
+
+
+
+
+<div *ngIf="!switch" class="container">
+
+<form [formGroup]="user" (ngSubmit)="onSubmit()">
+  <p>
+    <label>First Name:</label>
+    <input type="text"  formControlName="firstName">
+</p>
+<p>
+    <label>Password:</label>
+    <input type="password"  formControlName="password">
+</p>
+</form>
+<button type="submit" (click)="onSubmit()" >Submit</button>
+
+</div>
+<button (click)="Logout()" >Log Out</button>
+{{user.value.firstName}}
+
+
+<!-- <div [ngbNavOutlet]="nav"></div> -->
+<!-- <app-barchart></app-barchart> -->
+<div  *ngIf="switch" class="container">
+<router-outlet></router-outlet>
+</div>
